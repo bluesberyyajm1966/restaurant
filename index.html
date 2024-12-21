@@ -3,69 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Rustic Eats</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fdf7ec;
       color: #333;
       scroll-behavior: smooth;
     }
     header {
-      background: #333;
+      background: #6d4c41;
       color: #fff;
+      padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
       position: fixed;
       width: 100%;
       z-index: 1000;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     header a {
-      color: #fff;
+      color: #ffe0b2;
       text-decoration: none;
       margin: 0 1rem;
-      font-weight: 600;
+      font-weight: bold;
       transition: color 0.3s;
     }
     header a:hover {
-      color: #f4a261;
-    }
-    section {
-      padding: 6rem 2rem;
-      text-align: center;
+      color: #fff;
     }
     #hero {
-      background: linear-gradient(135deg, #f4a261, #2a9d8f);
-      color: white;
-      min-height: 100vh;
+      background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
+      height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
     #hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-family: 'Lobster', cursive;
+      font-size: 4rem;
+      margin: 0;
     }
     #hero p {
       font-size: 1.5rem;
-      max-width: 600px;
+      margin-top: 1rem;
+    }
+    section {
+      padding: 5rem 2rem;
+    }
+    #menu {
+      background-color: #fff3e0;
+    }
+    #menu h2 {
+      font-family: 'Lobster', cursive;
+      color: #6d4c41;
+      font-size: 3rem;
     }
     .menu {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 2rem;
+      justify-content: center;
       margin-top: 2rem;
     }
     .menu-item {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: #ffe0b2;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s;
     }
     .menu-item:hover {
@@ -73,73 +85,85 @@
     }
     .menu-item img {
       width: 100%;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+      height: 200px;
+      object-fit: cover;
     }
     .menu-item h3 {
-      color: #2a9d8f;
+      margin: 1rem;
+      color: #6d4c41;
+      font-family: 'Lobster', cursive;
     }
     .menu-item p {
-      font-size: 1rem;
-      margin: 0.5rem 0;
+      margin: 0 1rem 1rem;
     }
-    .menu-item .price {
-      font-weight: bold;
-      color: #f4a261;
+    #reservation {
+      background-color: #efebe9;
+      text-align: center;
+    }
+    #reservation h2 {
+      font-family: 'Lobster', cursive;
+      color: #6d4c41;
     }
     form {
       max-width: 600px;
-      margin: 0 auto;
+      margin: 2rem auto;
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
     form input, form textarea, form button {
       padding: 1rem;
-      border: 2px solid #2a9d8f;
-      border-radius: 8px;
+      border: 2px solid #6d4c41;
+      border-radius: 5px;
       font-size: 1rem;
       outline: none;
       transition: border-color 0.3s;
     }
     form input:focus, form textarea:focus {
-      border-color: #f4a261;
+      border-color: #d7ccc8;
     }
     form button {
-      background: #2a9d8f;
+      background: #6d4c41;
       color: white;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: bold;
       transition: background 0.3s;
     }
     form button:hover {
-      background: #f4a261;
+      background: #8d6e63;
+    }
+    #gallery {
+      background-color: #fff;
+      text-align: center;
     }
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
+      justify-content: center;
       margin-top: 2rem;
     }
     .gallery img {
-      width: 100%;
+      width: 300px;
+      height: 200px;
       border-radius: 8px;
+      object-fit: cover;
       transition: transform 0.3s;
       cursor: pointer;
     }
     .gallery img:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
     footer {
-      background: #333;
+      background: #6d4c41;
       color: #fff;
       text-align: center;
-      padding: 1.5rem;
-      margin-top: 3rem;
+      padding: 2rem;
     }
     footer a {
-      color: #f4a261;
+      color: #ffe0b2;
       text-decoration: none;
+      font-weight: bold;
     }
     footer a:hover {
       text-decoration: underline;
@@ -149,7 +173,7 @@
 <body>
 
 <header>
-  <div>Restaurant Name</div>
+  <div>Rustic Eats</div>
   <nav>
     <a href="#hero">Home</a>
     <a href="#menu">Menu</a>
@@ -159,30 +183,27 @@
 </header>
 
 <section id="hero">
-  <h1>Welcome to Our Restaurant</h1>
-  <p>Serving delicious meals with a touch of elegance.</p>
+  <h1>Welcome to Rustic Eats</h1>
+  <p>Cozy dining with a rustic charm.</p>
 </section>
 
 <section id="menu">
   <h2>Our Menu</h2>
   <div class="menu">
     <div class="menu-item">
-      <img src="https://via.placeholder.com/300" alt="Grilled Salmon">
-      <h3>Grilled Salmon</h3>
-      <p>Freshly grilled salmon with herbs and lemon butter.</p>
-      <p class="price">$20.99</p>
+      <img src="https://via.placeholder.com/300x200" alt="Steak Dinner">
+      <h3>Steak Dinner</h3>
+      <p>Juicy steak with seasonal vegetables.</p>
     </div>
     <div class="menu-item">
-      <img src="https://via.placeholder.com/300" alt="Pasta Carbonara">
-      <h3>Pasta Carbonara</h3>
-      <p>Classic Italian pasta with creamy sauce and pancetta.</p>
-      <p class="price">$15.99</p>
+      <img src="https://via.placeholder.com/300x200" alt="Rustic Pizza">
+      <h3>Rustic Pizza</h3>
+      <p>Wood-fired pizza with fresh toppings.</p>
     </div>
     <div class="menu-item">
-      <img src="https://via.placeholder.com/300" alt="Caesar Salad">
-      <h3>Caesar Salad</h3>
-      <p>Crispy romaine lettuce with Caesar dressing and croutons.</p>
-      <p class="price">$12.99</p>
+      <img src="https://via.placeholder.com/300x200" alt="Cheesecake">
+      <h3>Cheesecake</h3>
+      <p>Rich and creamy cheesecake with a graham cracker crust.</p>
     </div>
   </div>
 </section>
@@ -194,21 +215,257 @@
     <input type="email" name="email" placeholder="Your Email" required>
     <input type="text" name="date" placeholder="Reservation Date" required>
     <textarea name="message" placeholder="Special Requests"></textarea>
-    <button type="submit">Book Now</button>
+    <button type="submit">Reserve Now</button>
   </form>
 </section>
 
 <section id="gallery">
   <h2>Gallery</h2>
   <div class="gallery">
-    <img src="https://via.placeholder.com/300" alt="Restaurant Interior">
-    <img src="https://via.placeholder.com/300" alt="Dish Presentation">
-    <img src="https://via.placeholder.com/300" alt="Outdoor Seating">
+    <img src="https://via.placeholder.com/300x200" alt="Dining Area">
+    <img src="https://via.placeholder.com/300x200" alt="Outdoor Patio">
+    <img src="https://via.placeholder.com/300x200" alt="Signature Dish">
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2024 Restaurant Name. All rights reserved. <a href="#hero">Back to top</a></p>
+  <p>&copy; 2024 Rustic Eats. Designed for food lovers. <a href="#hero">Back to top</a></p>
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rustic Eats</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fdf7ec;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #6d4c41;
+      color: #fff;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    header a {
+      color: #ffe0b2;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    header a:hover {
+      color: #fff;
+    }
+    #hero {
+      background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    #hero h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 4rem;
+      margin: 0;
+    }
+    #hero p {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+    section {
+      padding: 5rem 2rem;
+    }
+    #menu {
+      background-color: #fff3e0;
+    }
+    #menu h2 {
+      font-family: 'Lobster', cursive;
+      color: #6d4c41;
+      font-size: 3rem;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .menu-item {
+      background: #ffe0b2;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    .menu-item:hover {
+      transform: scale(1.05);
+    }
+    .menu-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .menu-item h3 {
+      margin: 1rem;
+      color: #6d4c41;
+      font-family: 'Lobster', cursive;
+    }
+    .menu-item p {
+      margin: 0 1rem 1rem;
+    }
+    #reservation {
+      background-color: #efebe9;
+      text-align: center;
+    }
+    #reservation h2 {
+      font-family: 'Lobster', cursive;
+      color: #6d4c41;
+    }
+    form {
+      max-width: 600px;
+      margin: 2rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    form input, form textarea, form button {
+      padding: 1rem;
+      border: 2px solid #6d4c41;
+      border-radius: 5px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    form input:focus, form textarea:focus {
+      border-color: #d7ccc8;
+    }
+    form button {
+      background: #6d4c41;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background: #8d6e63;
+    }
+    #gallery {
+      background-color: #fff;
+      text-align: center;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      border-radius: 8px;
+      object-fit: cover;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+    footer {
+      background: #6d4c41;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+    footer a {
+      color: #ffe0b2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>Rustic Eats</div>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#reservation">Reservation</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+</header>
+
+<section id="hero">
+  <h1>Welcome to Rustic Eats</h1>
+  <p>Cozy dining with a rustic charm.</p>
+</section>
+
+<section id="menu">
+  <h2>Our Menu</h2>
+  <div class="menu">
+    <div class="menu-item">
+      <img src="https://via.placeholder.com/300x200" alt="Steak Dinner">
+      <h3>Steak Dinner</h3>
+      <p>Juicy steak with seasonal vegetables.</p>
+    </div>
+    <div class="menu-item">
+      <img src="https://via.placeholder.com/300x200" alt="Rustic Pizza">
+      <h3>Rustic Pizza</h3>
+      <p>Wood-fired pizza with fresh toppings.</p>
+    </div>
+    <div class="menu-item">
+      <img src="https://via.placeholder.com/300x200" alt="Cheesecake">
+      <h3>Cheesecake</h3>
+      <p>Rich and creamy cheesecake with a graham cracker crust.</p>
+    </div>
+  </div>
+</section>
+
+<section id="reservation">
+  <h2>Make a Reservation</h2>
+  <form>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="date" placeholder="Reservation Date" required>
+    <textarea name="message" placeholder="Special Requests"></textarea>
+    <button type="submit">Reserve Now</button>
+  </form>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/300x200" alt="Dining Area">
+    <img src="https://via.placeholder.com/300x200" alt="Outdoor Patio">
+    <img src="https://via.placeholder.com/300x200" alt="Signature Dish">
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 Rustic Eats. Designed for food lovers. <a href="#hero">Back to top</a></p>
 </footer>
 
 </body>
