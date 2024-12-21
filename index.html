@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -133,27 +133,35 @@
       background: #8d6e63;
     }
     #gallery {
-      background-color: #fff;
+     background-color: #fff;
       text-align: center;
+      padding: 5rem 2rem; /* Add padding to prevent overflow */
+      overflow: hidden; /* Ensure no overflow issues */
     }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 2rem;
+      gap: 1rem; /* Proper spacing between items */
+      justify-content: center; /* Center the gallery items */
+      margin: 0 auto; /* Ensure the gallery stays centered */
+      max-width: 1200px; /* Set a max width for better alignment */
     }
+
     .gallery img {
-      width: 300px;
-      height: 200px;
-      border-radius: 8px;
+      width: 300px; /* Consistent image size */
+      height: 200px; /* Consistent height */
+      border-radius: 8px; /* Rounded corners */
       object-fit: cover;
       transition: transform 0.3s;
       cursor: pointer;
     }
+
     .gallery img:hover {
-      transform: scale(1.1);
+      transform: scale(1.1); /* Hover effect for a better visual */
     }
+
+    
     footer {
       background: #6d4c41;
       color: #fff;
